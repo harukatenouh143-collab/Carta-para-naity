@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Una carta especial para ti</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Canvas para partículas de fondo -->
+  <canvas id="bgCanvas"></canvas>
+
+  <main class="container">
+    <!-- Sobre animado -->
+    <div class="envelope-wrapper" id="envelopeWrapper">
+      <div class="envelope" id="envelope">
+        <div class="flap"></div>
+        <div class="pocket"></div>
+        <div class="letter-preview">
+          <p>🧡 Toca para abrir</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Carta principal -->
+    <article class="card hidden" id="cardContainer">
+      <header class="card-header">
+        <span class="badge">Para la mejor amiga del mundo</span>
+        <h1 class="title">¡Hola, mi gran amiga! ✨</h1>
+      </header>
+
+      <section class="card-body">
+        <p class="message-text">
+          Quería escribirte para recordarte lo mucho que significas para mí. Gracias por tantas risas, por tus consejos, por escucharme siempre y por acompañarme tanto en los buenos como en los malos momentos. Tener tu amistad es uno de los regalos más lindos de mi vida.
+        </p>
+        <p class="message-text underline">
+          ¡Gracias por ser insustituible y por iluminar siempre el camino!
+        </p>
+      </section>
+
+      <!-- Galería interactiva / recuerdos -->
+      <section class="photo-gallery">
+        <h3>Nuestros Recuerdos 📸</h3>
+        <div class="gallery-grid">
+          <div class="photo-card" role="button" tabindex="0" data-src="Imagen/1703623813406.jpg" data-caption="Risas juntas">
+            <img src="Imagen/1703623813406.jpg" alt="Recuerdo de risas juntas">
+            <span>Risas juntas</span>
+          </div>
+          <div class="photo-card" role="button" tabindex="0" data-src="Imagen/IMG_20240601_113120_619.jpg" data-caption="Un momento inolvidable">
+            <img src="Imagen/IMG_20240601_113120_619.jpg" alt="Recuerdo con uniforme de graduación">
+            <span>Momentos inolvidables</span>
+          </div>
+          <div class="photo-card" role="button" tabindex="0" data-src="Imagen/IMG-20250719-WA0039.jpg" data-caption="Una aventura juntas">
+            <img src="Imagen/IMG-20250719-WA0039.jpg" alt="Recuerdo de una aventura">
+            <span>Aventuras</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Reproductor multimedia -->
+      <footer class="card-footer">
+        <div class="audio-player">
+          <p class="audio-label">🎵 Una canción para acompañar:</p>
+          <audio controls id="bgMusic">
+            <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+            Tu navegador no soporta el reproductor de audio.
+          </audio>
+        </div>
+        <button class="btn-surprise" id="btnSurprise" type="button">✨ ¡Haz clic aquí para una sorpresa!</button>
+      </footer>
+    </article>
+  </main>
+
+  <!-- Modal para fotos -->
+  <div class="modal hidden" id="photoModal">
+    <div class="modal-content">
+      <button class="close-btn" id="closeModal" type="button" aria-label="Cerrar">&times;</button>
+      <img id="modalImg" src="" alt="Recuerdo ampliado">
+      <p id="modalCaption"></p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
